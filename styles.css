@@ -9,16 +9,28 @@ body {
 
 /* Barra de navegación */
 .navbar {
-    position: absolute;
-    top: 0;
+  
+    top: 24px;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     padding: 10px;
     z-index: 10;
     transition: transform 0.3s ease-in-out;
+        position: relative; /* necesario para posicionar el ::after */
+       padding-left: 350px; /* ajusta este valor según lo que necesites */
+}
+.navbar::after {
+  content: "";
+  position: absolute;
+  top: 100%;           /* justo debajo del navbar */
+  left: 40%;           /* punto central horizontal */
+  transform: translateX(-50%);
+  width: 1140px;        /* ancho total de la línea */
+  height: 2px;
+  background-color: white;
+  margin-top: 18px;    /* separación vertical extra */
 }
 
 /* Los enlaces de la barra de navegación */
@@ -29,12 +41,10 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    
 }
 
-/* Efecto hover */
-.navbar a:hover {
-    background-color: #34495e;
-}
+
 
 /* Ícono de menú hamburguesa (solo en móvil) */
 .menu-icon {
@@ -458,20 +468,31 @@ textarea {
 
 .header-icon {
   position: absolute;
-  top: -5px;
-  left: 15px;
+  top: 20px;
+  left: 190px;
   z-index: 20; /* por encima de fondo y carrusel */
   display: block;
 }
 
 .header-icon img {
-  height: 100px; /* tamaño ajustable */
+  height: 85px; /* tamaño ajustable */
   width: auto;
   transition: transform 0.3s ease;
 }
 
 .header-icon:hover img {
   transform: scale(1.1);
+}
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 768px) {
+  .header-icon {
+    left: 15px;  /* esquina izquierda */
+     top: 22px;
+  }
+  .header-icon img {
+    height: 60px; /* tamaño más pequeño para móvil */
+    width: auto;
+  }
 }
 
   .dipi-section {

@@ -36,3 +36,21 @@ window.onclick = function(event) {
 
   setInterval(showNextSlide, 3000);
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const dipiSection = document.querySelector('.dipi-section');
+
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if(scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scroll hacia abajo, oculta la sección
+      dipiSection.classList.add('hidden');
+    } else {
+      // Scroll hacia arriba, muestra la sección
+      dipiSection.classList.remove('hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
+  }, false);
+});

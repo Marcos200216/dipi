@@ -1,14 +1,14 @@
 // Desplazamiento suave entre secciones
 document.querySelectorAll('.navbar a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-  
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
     });
   });
-  // Función para abrir el modal
+});
+
+// Función para abrir el modal
 function openForm() {
   document.getElementById("contactModal").style.display = "block";
 }
@@ -19,12 +19,14 @@ function closeForm() {
 }
 
 // Cierra el modal si se hace clic fuera de él
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == document.getElementById("contactModal")) {
     closeForm();
   }
-}
- document.addEventListener("DOMContentLoaded", function () {
+};
+
+// Carrusel automático
+document.addEventListener("DOMContentLoaded", function () {
   let slideIndex = 0;
   const slides = document.querySelectorAll('.carousel-slide');
 
@@ -36,21 +38,24 @@ window.onclick = function(event) {
 
   setInterval(showNextSlide, 3000);
 });
+
+// Animación de entrada para la sección .dipi-section
 document.addEventListener('DOMContentLoaded', () => {
   const dipiSection = document.querySelector('.dipi-section');
+  dipiSection.classList.add('fade-in-up'); // clase base para animación
 
-  let lastScrollTop = 0;
-  window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+  dipiSection.classList.add('visible');
+} else {
+  dipiSection.classList.remove('visible');
+}
 
-    if(scrollTop > lastScrollTop && scrollTop > 100) {
-      // Scroll hacia abajo, oculta la sección
-      dipiSection.classList.add('hidden');
-    } else {
-      // Scroll hacia arriba, muestra la sección
-      dipiSection.classList.remove('hidden');
-    }
+    });
+  }, {
+    threshold: 0.2
+  });
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evita valores negativos
-  }, false);
+  observer.observe(dipiSection);
 });

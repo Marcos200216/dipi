@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspiración Cristiana</title>
+
+  <!-- Fuentes y librerías -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- AOS para animaciones -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  
+  <!-- Librerías de GSAP para animaciones avanzadas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.0/gsap.min.js"></script>
+</head>
+<body>
+<header>
+  <!-- Icono en la esquina superior izquierda -->
+<a href="#" class="header-icon">
+  <img src="templates/logo.png" alt="Icono" />
+</a>
+
+  <!-- Carrusel de imágenes de fondo -->
+  <div class="carousel">
+    <div class="carousel-slide active" style="background-image: url('templates/fondo1.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('templates/fondo2.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('templates/fondo3.jpg');"></div>
+    <div class="carousel-slide" style="background-image: url('templates/fondo4.jpg');"></div>
+  </div>
+
+  <!-- Menú -->
+  <nav class="navbar">
+    <a href="#">Inicio</a>
+    <a href="#versiculo">Servicios</a>
+    <a href="#cajas">Contacto</a>
+    <a href="#contacto">Contacto</a>
+    <div class="close-btn" id="close-btn">&times;</div>
+  </nav>
+
+  <!-- Icono menú móvil -->
+  <div class="menu-icon" id="menu-icon">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Hero con texto -->
+  <div class="hero">
+    <h2>Bienvenido a Reparaciones Línea Blanca</h2>
+    <p data-aos="fade-up">Expertos en reparación de refrigeradoras, cocinas, lavadoras y más.</p>
+  </div>
+</header>
+
+
+
+ <!-- Versículo del día -->
+<section id="versiculo" class="content">
+  <h2>Versículo del día</h2>
+  <div class="versiculo-box" data-aos="fade-up" data-aos-duration="2000">
+    <p id="versiculo-dia">Cargando versículo...</p>
+  </div>
+</section>
+
+
+<section id="reflexion" class="content dipi-section">
+  <div class="dipi-card">
+    <div class="dipi-logo">
+      <span class="letter d">D</span>
+      <span class="letter i1">I</span>
+      <span class="letter p">P</span>
+      <span class="letter i2">I</span>
+    </div>
+    <p class="dipi-tagline">Reparación técnica confiable en línea blanca y más</p>
+    <a href="#contacto" class="cta-button">Solicitar servicio</a>
+  </div>
+</section>
+
+
+
+<section id="cajas" class="content">
+  <h2>Servicios</h2>
+  <div class="grid-container">
+    <a href="templates/refrigeradoras.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Refrigeradoras">
+        <div class="overlay">Refrigeradoras</div>
+      </div>
+    </a>
+    <a href="templates/lavadoras.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Lavadoras">
+        <div class="overlay">Lavadoras</div>
+      </div>
+    </a>
+    <a href="templates/secadoras.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Secadoras">
+        <div class="overlay">Secadoras</div>
+      </div>
+    </a>
+    <a href="templates/centros-de-lacado.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Centros de Lacado">
+        <div class="overlay">Centros de Lavado</div>
+      </div>
+    </a>
+    <a href="templates/ice-maker.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Ice Maker">
+        <div class="overlay">Ice Maker</div>
+      </div>
+    </a>
+    <a href="templates/lavaplatos.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Lavaplatos">
+        <div class="overlay">Lavaplatos</div>
+      </div>
+    </a>
+    <a href="templates/aires-acondicionados.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Aires Acondicionados">
+        <div class="overlay">Aires Acondicionados</div>
+      </div>
+    </a>
+    <a href="templates/extractores-de-grasa.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Extractores de Grasa">
+        <div class="overlay">Extractores de Grasa</div>
+      </div>
+    </a>
+    <a href="templates/cocinas.html">
+      <div class="grid-item" data-aos="zoom-in" data-aos-duration="1500">
+        <img src="templates/refri.jpg" alt="Cocinas">
+        <div class="overlay">Cocinas</div>
+      </div>
+    </a>
+  </div>
+</section>
+ <!-- Scripts -->
+  <script src="script.js"></script>
+
+
+<footer id="contacto">
+  <div class="footer-container">
+    <div class="footer-section about">
+      <h3>Inspiración Cristiana</h3>
+<p>Creada con el propósito de compartir el evangelio de Jesucristo y su mensaje de salvación, brindando apoyo a las personas a través de la palabra bíblica y consejos inspiradores.</p>
+    </div>
+
+    <div class="footer-section contact">
+      <h3>Contacto</h3>
+      <ul>
+        <li><strong>Teléfono:</strong> +506 70842740</li>
+        <li><strong>Correo:</strong> jr417270@gmail.com</li>
+      </ul>
+    </div>
+
+  
+
+<div class="footer-section contact">
+  <h3>Estamos para escucharte</h3>
+<p>Si tienes alguna pregunta o requieres más información, por favor completa el siguiente formulario para ponerte en contacto.</p>
+  <button class="open-form-btn" onclick="openForm()">Enviar un correo</button>
+</div>
+
+<!-- Modal centrado -->
+<div class="modal" id="contactModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+    <h3>Formulario de Contacto</h3>
+    <form id="contact-form">
+      <div class="form-group">
+        <input type="text" name="nombre" required placeholder="Tu nombre">
+      </div>
+      <div class="form-group">
+        <input type="email" name="correo" required placeholder="Tu correo">
+      </div>
+      <div class="form-group">
+        <textarea name="mensaje" required rows="4" placeholder="Tu mensaje"></textarea>
+      </div>
+      <button type="submit" class="submit-button">Enviar Mensaje</button>
+    </form>
+  </div>
+</div>
+
+
+
+ <div class="footer-bottom">
+  <p>&copy; 2025 Inspiración Cristiana | Desarrollado por <strong>Marcos</strong></p>
+</div>
+
+</footer>
+
+
+ 
+  <!-- AOS script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+
+
+
+
+    // Inicializa AOS
+    AOS.init();
+
+    // Lógica para mostrar/ocultar el menú en móvil
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.querySelector('.navbar');
+    const closeBtn = document.getElementById('close-btn');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+   function openForm() {
+  document.getElementById("contactModal").style.display = "flex";
+}
+function closeForm() {
+  document.getElementById("contactModal").style.display = "none";
+}
+
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+
+     // Cierra el menú cuando se hace clic en la X
+     closeBtn.addEventListener('click', () => {
+      navbar.classList.remove('active');
+    });
+    // Cerrar el menú al hacer clic en cualquier enlace
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navbar.classList.remove('active');
+    });
+  });
+
+  // Cerrar el menú si haces scroll
+  window.addEventListener('scroll', () => {
+    navMenu.classList.remove('active');
+  });
+  </script>
+  
+ <!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Previene el redireccionamiento
+
+    const formData = new FormData(form);
+
+    fetch('https://formspree.io/f/mblokqbp', { // ← Cambia XXXXX por tu ID de Formspree
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json'
+      },
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        Swal.fire({
+          icon: 'success',
+          title: '¡Mensaje enviado!',
+          text: 'Gracias por contactarnos.',
+          confirmButtonColor: '#2c3e50'
+        }).then(() => {
+          document.getElementById('contactModal').style.display = 'none'; // Cierra el modal
+        });
+        form.reset();
+      } else {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Error al enviar el formulario');
+        });
+      }
+    })
+    .catch(error => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: error.message,
+        confirmButtonColor: '#e74c3c'
+      });
+    });
+  });
+</script>
+
+
+</body>
+</html>

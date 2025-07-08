@@ -5,6 +5,7 @@ body {
     box-sizing: border-box;
     background-color: #f3f4f6;
     color: #333;
+    
 }
 
 /* Barra de navegación */
@@ -827,6 +828,7 @@ textarea {
     font-size: 12px;
   }
 }
+
 .zona-operacion {
   background-color: #111;
   color: #eee;
@@ -900,11 +902,11 @@ textarea {
   color: #bbb;
   line-height: 1.4;
 }
-
 /* Responsive */
 @media (max-width: 768px) {
   .zona-operacion-container {
     flex-direction: column;
+    padding: 0 10px;
   }
 
   .zona-guanacaste img,
@@ -920,5 +922,16 @@ textarea {
 
   .zona-prestigio-info {
     margin-top: 10px;
+    padding: 0 10px;
+  }
+
+  .zona-guanacaste h2,
+  .zona-prestigio h2 {
+    text-align: center;
+  }
+
+  .zona-guanacaste p,
+  .zona-prestigio-info p {
+    text-align: center;
   }
 }

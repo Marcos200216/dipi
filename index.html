@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inspiración Cristiana</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
   <!-- Fuentes y librerías -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300&display=swap" rel="stylesheet">
@@ -55,66 +56,70 @@
 
 
 
-<!-- Por qué elegirnos -->
 <section id="porque-elegirnos" class="content elegirnos-section">
   <h2>¿Por qué elegirnos?</h2>
   <p class="elegirnos-subtitulo">Más de 10 años reparando línea blanca con calidad y confianza.</p>
 
   <div class="elegirnos-grid">
     <div class="ventaja" data-aos="fade-up">
-      <span class="emoji">🛠️</span>
+      <i class="fa-solid fa-wrench icono"></i>
       <h3>Técnicos certificados</h3>
       <p>Personal capacitado para todas las marcas y modelos.</p>
     </div>
     <div class="ventaja" data-aos="fade-up" data-aos-delay="100">
-      <span class="emoji">⏱️</span>
+      <i class="fa-solid fa-stopwatch icono"></i>
       <h3>Atención rápida</h3>
       <p>Respondemos en menos de 24 horas.</p>
     </div>
     <div class="ventaja" data-aos="fade-up" data-aos-delay="200">
-      <span class="emoji">🏠</span>
+      <i class="fa-solid fa-house-user icono"></i>
       <h3>Servicio a domicilio</h3>
       <p>Vamos hasta tu casa sin costo adicional en Liberia.</p>
     </div>
     <div class="ventaja" data-aos="fade-up" data-aos-delay="300">
-      <span class="emoji">💬</span>
+      <i class="fa-solid fa-comments icono"></i>
       <h3>Excelente atención</h3>
       <p>Te explicamos todo de forma clara y honesta.</p>
     </div>
     <div class="ventaja" data-aos="fade-up" data-aos-delay="400">
-      <span class="emoji">🧾</span>
+      <i class="fa-solid fa-file-invoice icono"></i>
       <h3>Garantía por escrito</h3>
       <p>Todas nuestras reparaciones están respaldadas.</p>
     </div>
     <div class="ventaja" data-aos="fade-up" data-aos-delay="500">
-      <span class="emoji">💳</span>
+      <i class="fa-solid fa-credit-card icono"></i>
       <h3>Facilidades de pago</h3>
       <p>Aceptamos efectivo, transferencia y SINPE Móvil.</p>
     </div>
   </div>
 </section>
 
+
 <section id="reflexion" class="content dipi-section">
-  <div class="dipi-card">
-    <div class="dipi-logo">
-      <span class="letter d">D</span>
-      <span class="letter i1">I</span>
-      <span class="letter p">P</span>
-      <span class="letter i2">I</span>
+  <div class="dipi-container">
+    <!-- Lado izquierdo: texto y botón -->
+    <div class="dipi-card">
+      <img src="/templates/logo1.png" alt="Logo DIPI" class="dipi-logo-static" />
+      <p class="dipi-tagline">
+        Servicio técnico experto y rápido para tus electrodomésticos.<br>
+        ¡Soluciones confiables al alcance de un clic!
+      </p>
+      <a href="https://wa.me/50670842740?text=Hola,%20quiero%20solicitar%20un%20servicio%20técnico" target="_blank" rel="noopener" class="cta-button">
+        Contactar vía WhatsApp
+      </a>
     </div>
-    <p class="dipi-tagline">
-      Servicio técnico experto y rápido para tus electrodomésticos. ¡Soluciones confiables al alcance de un clic!
-    </p>
-    <a 
-      href="https://wa.me/50670842740?text=Hola,%20quiero%20solicitar%20un%20servicio%20técnico" 
-      target="_blank" 
-      rel="noopener" 
-      class="cta-button"
-    >
-      Contactar vía WhatsApp
-    </a>
+
+    <!-- Lado derecho: carrusel de imágenes -->
+    <div class="dipi-carousel">
+      <div class="carousel-inner">
+        <img src="/templates/carru1.jpg" alt="Imagen 1" class="carousel-image active">
+        <img src="/templates/carru2.jpeg" alt="Imagen 2" class="carousel-image">
+        <img src="/templates/carru3.jpeg" alt="Imagen 3" class="carousel-image">
+      </div>
+    </div>
   </div>
 </section>
+
 
 
 
@@ -221,7 +226,7 @@ function closeForm() {
 
   // Cerrar el menú si haces scroll
   window.addEventListener('scroll', () => {
-    navMenu.classList.remove('active');
+    navbar.classList.remove('active');
   });
   </script>
   
@@ -229,6 +234,17 @@ function closeForm() {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
+<script>
+const images = document.querySelectorAll(".carousel-image");
+let current = 0;
+
+setInterval(() => {
+  images[current].classList.remove("active");
+  current = (current + 1) % images.length;
+  images[current].classList.add("active");
+}, 3000); // Cambia cada 3 segundos
+
+</script>
 
 </body>
 </html>

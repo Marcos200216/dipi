@@ -285,6 +285,23 @@ h2 {
   .grid-container a {
     text-decoration: none;
   }
+  * Cancelar efectos hover en móviles */
+  .grid-item {
+    transition: none !important;
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important; /* sombra sin cambio */
+  }
+
+  .grid-item:hover {
+    transform: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .grid-item:hover .overlay {
+    opacity: 0.8 !important; /* mismo nivel de opacidad que normal */
+    font-size: 10px !important; /* mantén el tamaño del texto */
+    text-shadow: none !important; /* quitar sombra del texto */
+  }
 }
 
 

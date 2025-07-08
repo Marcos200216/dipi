@@ -25,7 +25,7 @@ window.onclick = function (event) {
   }
 };
 
-// Carrusel automático
+
 document.addEventListener("DOMContentLoaded", function () {
   let slideIndex = 0;
   const slides = document.querySelectorAll('.carousel-slide');

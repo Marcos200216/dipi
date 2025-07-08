@@ -21,13 +21,17 @@ body {
         position: relative; /* necesario para posicionar el ::after */
        padding-left: 350px; /* ajusta este valor según lo que necesites */
 }
+/* ✅ Desplazar solo los enlaces */
+.navbar a {
+  margin-left: -8px; /* Ajusta este valor para mover el texto a la izquierda */
+}
 .navbar::after {
   content: "";
   position: absolute;
   top: 100%;           /* justo debajo del navbar */
   left: 40%;           /* punto central horizontal */
   transform: translateX(-50%);
-  width: 1140px;        /* ancho total de la línea */
+  width: 1110px;        /* ancho total de la línea */
   height: 2px;
   background-color: white;
   margin-top: 18px;    /* separación vertical extra */
@@ -821,5 +825,100 @@ textarea {
 
   .ventaja p {
     font-size: 12px;
+  }
+}
+.zona-operacion {
+  background-color: #111;
+  color: #eee;
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.zona-operacion-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.zona-guanacaste,
+.zona-prestigio {
+  flex: 1;
+  min-width: 300px;
+}
+
+.zona-guanacaste h2,
+.zona-prestigio h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.zona-guanacaste img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  object-fit: cover;
+  max-height: 220px;
+}
+
+.zona-guanacaste p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.zona-prestigio-card {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  background-color: #1c1c1c;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  align-items: center;
+}
+
+.zona-prestigio-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.zona-prestigio-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.zona-prestigio-info p {
+  font-size: 14px;
+  color: #bbb;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .zona-operacion-container {
+    flex-direction: column;
+  }
+
+  .zona-guanacaste img,
+  .zona-prestigio-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .zona-prestigio-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .zona-prestigio-info {
+    margin-top: 10px;
   }
 }

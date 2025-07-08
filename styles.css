@@ -238,6 +238,31 @@ h2 {
     background-color: rgba(0, 0, 0, 0.4); /* oscurece al pasar el mouse */
 }
 
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .grid-item {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+
+  .grid-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  .overlay {
+    font-size: 14px;
+  }
+}
 
 /* Estilos para el footer */
 footer {

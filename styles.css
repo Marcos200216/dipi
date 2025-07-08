@@ -562,7 +562,9 @@ textarea {
 .cta-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #2c3e50;
+  background-color: #1b9a4a; /* Verde WhatsApp */
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -571,7 +573,8 @@ textarea {
 }
 
 .cta-button:hover {
-  background-color: #34495e;
+  background-color: #168d40;
+  box-shadow: 0 6px 20px rgba(30, 190, 87, 0.6);
 }
 
 @keyframes fadeInUp {

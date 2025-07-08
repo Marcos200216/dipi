@@ -495,13 +495,11 @@ textarea {
   }
 }
 .dipi-section {
-  background: linear-gradient(135deg, #e0e5ec, #cfd8dc);
-  background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); /* patrón muy sutil */
-  background-repeat: repeat;
-  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9fafb, #e6ebf1); /* degradado muy suave */
+  padding: 40px 20px;
   text-align: center;
   border-radius: 20px;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
   transition: opacity 0.5s ease, transform 0.5s ease;
@@ -509,6 +507,7 @@ textarea {
   transform: translateY(0);
   pointer-events: auto;
 }
+
 
 .dipi-section.hidden {
   opacity: 0;
@@ -563,8 +562,8 @@ textarea {
 .cta-button {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #1b9a4a; /* Verde WhatsApp */
-  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  background-color: #4caf70; /* verde suave y más apagado */
+  box-shadow: 0 4px 10px rgba(76, 175, 112, 0.3); /* sombra más sutil */
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   color: white;
   border-radius: 8px;
@@ -573,8 +572,8 @@ textarea {
 }
 
 .cta-button:hover {
-  background-color: #168d40;
-  box-shadow: 0 6px 20px rgba(30, 190, 87, 0.6);
+  background-color: #3a8a55; /* verde un poco más oscuro pero suave */
+  box-shadow: 0 6px 15px rgba(58, 138, 85, 0.4);
 }
 
 @keyframes fadeInUp {

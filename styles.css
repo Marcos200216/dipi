@@ -239,6 +239,9 @@ h2 {
 }
 
 @media (max-width: 768px) {
+    .content {
+    margin-top: -35px; /* Ajusta el valor según cuánto quieras subir */
+  }
   .grid-container {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;

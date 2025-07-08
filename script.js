@@ -39,23 +39,30 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(showNextSlide, 3000);
 });
 
-// Animación de entrada para la sección .dipi-section
 document.addEventListener('DOMContentLoaded', () => {
   const dipiSection = document.querySelector('.dipi-section');
-  dipiSection.classList.add('fade-in-up'); // clase base para animación
+  const letters = dipiSection.querySelectorAll('.letter');
+
+  dipiSection.classList.add('fade-in-up');
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-  dipiSection.classList.add('visible');
-} else {
-  dipiSection.classList.remove('visible');
-}
+        dipiSection.classList.add('visible');
 
+        // Reiniciar animación de letras
+        letters.forEach(letter => {
+          letter.style.animation = 'none'; // quitar animación
+          letter.offsetHeight; // fuerza reflow
+          letter.style.animation = ''; // vuelve a poner animación CSS definida
+        });
+
+      } else {
+        dipiSection.classList.remove('visible');
+      }
     });
-  }, {
-    threshold: 0.2
-  });
+  }, { threshold: 0.2 });
 
   observer.observe(dipiSection);
 });
+

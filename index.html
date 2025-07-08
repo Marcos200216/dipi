@@ -94,7 +94,6 @@
   </div>
 </section>
 
-
 <section id="reflexion" class="content dipi-section">
   <div class="dipi-card">
     <div class="dipi-logo">
@@ -171,60 +170,6 @@
 </section>
  <!-- Scripts -->
   <script src="script.js"></script>
-
-
-<footer id="contacto">
-  <div class="footer-container">
-    <div class="footer-section about">
-      <h3>Inspiración Cristiana</h3>
-<p>Creada con el propósito de compartir el evangelio de Jesucristo y su mensaje de salvación, brindando apoyo a las personas a través de la palabra bíblica y consejos inspiradores.</p>
-    </div>
-
-    <div class="footer-section contact">
-      <h3>Contacto</h3>
-      <ul>
-        <li><strong>Teléfono:</strong> +506 70842740</li>
-        <li><strong>Correo:</strong> jr417270@gmail.com</li>
-      </ul>
-    </div>
-
-  
-
-<div class="footer-section contact">
-  <h3>Estamos para escucharte</h3>
-<p>Si tienes alguna pregunta o requieres más información, por favor completa el siguiente formulario para ponerte en contacto.</p>
-  <button class="open-form-btn" onclick="openForm()">Enviar un correo</button>
-</div>
-
-<!-- Modal centrado -->
-<div class="modal" id="contactModal">
-  <div class="modal-content">
-    <span class="close" onclick="closeForm()">&times;</span>
-    <h3>Formulario de Contacto</h3>
-    <form id="contact-form">
-      <div class="form-group">
-        <input type="text" name="nombre" required placeholder="Tu nombre">
-      </div>
-      <div class="form-group">
-        <input type="email" name="correo" required placeholder="Tu correo">
-      </div>
-      <div class="form-group">
-        <textarea name="mensaje" required rows="4" placeholder="Tu mensaje"></textarea>
-      </div>
-      <button type="submit" class="submit-button">Enviar Mensaje</button>
-    </form>
-  </div>
-</div>
-
-
-
- <div class="footer-bottom">
-  <p>&copy; 2025 Inspiración Cristiana | Desarrollado por <strong>Marcos</strong></p>
-</div>
-
-</footer>
-
-
  
   <!-- AOS script -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
@@ -273,48 +218,6 @@ function closeForm() {
  <!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<script>
-  const form = document.getElementById('contact-form');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Previene el redireccionamiento
-
-    const formData = new FormData(form);
-
-    fetch('https://formspree.io/f/mblokqbp', { // ← Cambia XXXXX por tu ID de Formspree
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json'
-      },
-      body: formData
-    })
-    .then(response => {
-      if (response.ok) {
-        Swal.fire({
-          icon: 'success',
-          title: '¡Mensaje enviado!',
-          text: 'Gracias por contactarnos.',
-          confirmButtonColor: '#2c3e50'
-        }).then(() => {
-          document.getElementById('contactModal').style.display = 'none'; // Cierra el modal
-        });
-        form.reset();
-      } else {
-        return response.json().then(data => {
-          throw new Error(data.error || 'Error al enviar el formulario');
-        });
-      }
-    })
-    .catch(error => {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: error.message,
-        confirmButtonColor: '#e74c3c'
-      });
-    });
-  });
-</script>
 
 
 </body>

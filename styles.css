@@ -495,20 +495,22 @@ textarea {
   }
 }
 
-  .dipi-section {
-  background: linear-gradient(to right, #f3f3f3, #dfe6e9);
+ .dipi-section {
+  background: linear-gradient(135deg, #e0e5ec, #cfd8dc);
+  background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png'); /* patrón muy sutil */
+  background-repeat: repeat;
   padding: 80px 20px;
   text-align: center;
   border-radius: 20px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
-  /* Agrega: */
   transition: opacity 0.5s ease, transform 0.5s ease;
   opacity: 1;
   transform: translateY(0);
-  pointer-events: auto; /* para permitir interacción cuando está visible */
+  pointer-events: auto;
 }
+
 /* Estado oculto */
 .dipi-section.hidden {
   opacity: 0;

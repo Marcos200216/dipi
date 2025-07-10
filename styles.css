@@ -954,6 +954,7 @@ body, html {
   font-size: 2.3rem;
   margin-bottom: 20px;
   color: #222;
+  
 }
 
 .contacto-info p {
@@ -1102,15 +1103,14 @@ textarea {
     margin: 0 auto;
      margin-top: -30px; /* menos espacio arriba */
   }
+  
 }
-
 .footer {
   background-color: #111;
   color: #ccc;
   padding: 25px 20px;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
-  
   box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.7);
 }
 
@@ -1120,18 +1120,30 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
-  gap: 15px;
+  gap: 30px;
 }
 
-.footer-info h3 {
-  margin: 0 0 8px 0;
+.footer-section {
+  flex: 1 1 250px; /* cada sección crece y tiene mínimo 250px */
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra el contenido dentro de cada sección */
+}
+
+.footer-info h3,
+.footer-social h3,
+.footer-extra h3 {
+  margin-bottom: 12px;
   font-weight: 700;
   color: #fbfefb;
+  font-size: 1.1rem;
+  text-align: center; /* centra títulos */
 }
 
 .footer-info p {
-  margin: 4px 0;
+  margin: 6px 0;
+  text-align: center; /* opcional para que el texto también se centre */
 }
 
 .footer-info a {
@@ -1146,28 +1158,77 @@ textarea {
   outline: none;
 }
 
-.footer-social a {
+.footer-social .social-links {
+  display: flex;
+  justify-content: center; /* centra los iconos */
+  gap: 18px;
+  width: 100%;
+}
+
+.footer-social .social-links a {
   color: #ccc;
-  font-size: 1.4rem;
-  margin-left: 15px;
+  font-size: 1.6rem;
   transition: color 0.3s ease;
   text-decoration: none;
 }
 
-.footer-social a:hover,
-.footer-social a:focus {
+.footer-social .social-links a:hover,
+.footer-social .social-links a:focus {
   color: #4caf50;
   outline: none;
 }
-
-/* Responsive para móvil */
 @media (max-width: 600px) {
   .footer-container {
-    flex-direction: column;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 40% 60%; /* columnas más compactas */
+    gap: 10px;
+    padding: 0 10px;
   }
-  
-  .footer-social a {
-    margin: 0 10px;
+
+  .footer-section p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+  }
+
+  .footer-section {
+    align-items: flex-start;
+    font-size: 0.8rem;
+  }
+
+  .footer-info h3,
+  .footer-info p {
+    text-align: left;
+    font-size: 0.85rem;
+  }
+
+  /* Aquí el cambio clave */
+  .footer-social {
+    align-items: center;  /* centra contenido horizontalmente */
+   
+     margin-left: 35px; /* ajusta este valor para mover más o menos */
+  }
+
+  .footer-social h3 {
+    text-align: center;   /* título centrado igual que escritorio */
+    width: 100%;
+    font-size: 0.85rem;
+    margin-left: 0;       /* elimina márgenes extra */
+    margin-bottom: 8px;   /* espacio agradable debajo del título */
+  }
+
+  .footer-social .social-links {
+    justify-content: center;  /* íconos centrados */
+    width: 100%;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+
+  .footer-social .social-links a {
+    font-size: 1.3rem;
+  }
+
+  .footer-extra {
+    display: none;
   }
 }

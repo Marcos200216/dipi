@@ -768,15 +768,7 @@ h2 {
   position: relative;
 }
 
-.sobre-nosotros-contenido h2::after {
-  content: "";
-  display: block;
-  width: 50px; /* más pequeño */
-  height: 3px; /* más delgado */
-  background: #000000;
-  border-radius: 2px;
-  margin-top: 6px;
-}
+
 
 .sobre-nosotros-contenido p {
   font-weight: 300;

@@ -11,7 +11,7 @@ body {
 /* Barra de navegación */
 .navbar {
   
-    top: 24px;
+    top: 48px;
     left: 0;
     width: 100%;
     display: flex;
@@ -35,7 +35,7 @@ body {
   width: 1110px;        /* ancho total de la línea */
   height: 2px;
   background-color: white;
-  margin-top: 18px;    /* separación vertical extra */
+  margin-top: 23px;    /* separación vertical extra */
 }
 
 /* Los enlaces de la barra de navegación */
@@ -84,50 +84,61 @@ body {
     display: none; /* Oculto por defecto */
 
 
-}@media (max-width: 768px) {
-  .menu-icon {
-    display: flex; /* mostrar solo en móvil */
-  }
-
+}
+@media (max-width: 768px) {
   .navbar {
     position: fixed !important;
-    
     top: 0;
-    right: 0 !important;       /* Cambiar a derecha */
-    left: auto !important;     /* Resetear left */
+    right: 0 !important;
+    left: auto !important;
     height: 100vh;
     width: 70%;
     max-width: 300px;
-    background-color: #111;
-    flex-direction: column;
-    padding-top: 0 !important; /* quita padding superior */
-    padding-left: 0 !important; /* elimina padding izquierdo */
+    background-color: transparent; /* transparente para que se vea el fondo del contenedor interno */
+    padding: 0 !important;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 20;
     justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Contenedor interno para los links */
+  .navbar-inner {
+    background-color: #111; /* fondo oscuro */
+    padding: 10px 0;        /* padding compacto arriba y abajo */
+    margin-top: 20px;       /* separa del tope para que suba más */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .navbar.active {
-    transform: translateX(0); /* Cuando se abre, se mueve a posición normal */
+    transform: translateX(0);
   }
 
-  .navbar a {
-    padding: 15px 25px;
-    font-size: 1.2rem;
-    margin-left: 0 !important;
+  .navbar-inner a {
+    padding: 12px 25px;
+    font-size: 1.1rem;
     color: white;
+    text-decoration: none;
     border-bottom: 1px solid #333;
+    margin: 0;
   }
 
-  .navbar::after {
-    display: none; /* ocultar línea blanca en móvil */
+  .navbar-inner a:last-child {
+    border-bottom: none; /* sin línea después del último */
   }
 
   .close-btn {
-    display: block; /* mostrar botón cerrar en móvil */
+    display: block;
+    top: 5px;
+    right: 10px;
   }
 }
+
 
 
 /* Ajuste para el header */

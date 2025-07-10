@@ -102,7 +102,7 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: -5px 0 15px rgba(0,0,0,0.5); /* sombra para dar profundidad */
-    border-left: 4px solid #000000; /* borde izquierdo verde para estilo */
+   
     backdrop-filter: saturate(180%) blur(10px); /* efecto blur sutil */
   }
 

@@ -32,7 +32,7 @@ body {
   top: 100%;           /* justo debajo del navbar */
   left: 40%;           /* punto central horizontal */
   transform: translateX(-50%);
-  width: 1110px;        /* ancho total de la línea */
+  width: 1120px;        /* ancho total de la línea */
   height: 2px;
   background-color: white;
   margin-top: 23px;    /* separación vertical extra */
@@ -84,8 +84,7 @@ body {
     display: none; /* Oculto por defecto */
 
 
-}
-@media (max-width: 768px) {
+}@media (max-width: 768px) {
   .navbar {
     position: fixed !important;
     top: 0;
@@ -94,21 +93,24 @@ body {
     height: 100vh;
     width: 70%;
     max-width: 300px;
-    background-color: transparent; /* transparente para que se vea el fondo del contenedor interno */
+    background-color: transparent; /* transparente para mostrar el contenedor interno */
     padding: 0 !important;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 20;
+    z-index: 9999; /* más alto para que esté encima de todo */
     justify-content: flex-start;
     display: flex;
     flex-direction: column;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5); /* sombra para dar profundidad */
+    border-left: 4px solid #000000; /* borde izquierdo verde para estilo */
+    backdrop-filter: saturate(180%) blur(10px); /* efecto blur sutil */
   }
 
   /* Contenedor interno para los links */
   .navbar-inner {
-    background-color: #111; /* fondo oscuro */
-    padding: 10px 0;        /* padding compacto arriba y abajo */
-    margin-top: 20px;       /* separa del tope para que suba más */
+     background-color: transparent;  /* sin fondo fijo */
+    padding: 10px 0;
+    margin-top: 0; /* corregido para que no se salga */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -120,12 +122,21 @@ body {
   }
 
   .navbar-inner a {
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    color: white;
+    padding: 14px 25px;
+    font-size: 1.15rem;
+    color: #e0e0e0; /* gris claro para buen contraste */
     text-decoration: none;
     border-bottom: 1px solid #333;
     margin: 0;
+    font-weight: 600;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .navbar-inner a:hover,
+  .navbar-inner a:focus {
+    background-color: #000000; /* verde vibrante al pasar el mouse */
+    color: white;
+    outline: none;
   }
 
   .navbar-inner a:last-child {
@@ -133,12 +144,21 @@ body {
   }
 
   .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    font-size: 32px;
+    color: #ffffff; /* verde para que destaque */
+    cursor: pointer;
     display: block;
-    top: 5px;
-    right: 10px;
+    z-index: 10000;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #404240; /* verde claro al pasar mouse */
   }
 }
-
 
 
 /* Ajuste para el header */

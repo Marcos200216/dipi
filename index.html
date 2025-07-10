@@ -228,7 +228,45 @@
     </div>
 
   </div>
+  </section>
+  
+<section class="contacto-section">
+
+  <div class="contacto-container">
+
+    <!-- Columna izquierda: información -->
+<div class="contacto-info" data-aos="fade-right" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
+      <h2><i class="fa-solid fa-envelope-open-text"></i> Escríbenos</h2>
+      <p>¿Tienes dudas, necesitas una cotización o quieres agendar una visita técnica?</p>
+      <p>Completa el formulario y te responderemos en el menor tiempo posible.</p>
+      <ul class="contacto-beneficios">
+        <li><i class="fa-solid fa-check-circle"></i> Atención rápida y personalizada</li>
+        <li><i class="fa-solid fa-lock"></i> Tus datos están protegidos</li>
+        <li><i class="fa-solid fa-bolt"></i> Respuesta garantizada en menos de 24h</li>
+      </ul>
+    </div>
+
+    <!-- Columna derecha: formulario -->
+<div class="contacto-formulario" data-aos="fade-left" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
+      <form id="formulario-contacto" action="https://formspree.io/f/mjkrnvvk" method="POST">
+        <div class="form-group">
+          <label for="email"><i class="fa-solid fa-at"></i> Correo electrónico</label>
+          <input type="email" name="email" id="email" required placeholder="ejemplo@correo.com">
+        </div>
+        <div class="form-group">
+          <label for="mensaje"><i class="fa-solid fa-comment-dots"></i> Mensaje</label>
+          <textarea name="message" id="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+        </div>
+        <button type="submit" class="cta-button">
+          <i class="fa-solid fa-paper-plane"></i> Enviar mensaje
+        </button>
+      </form>
+    </div>
+
+  </div>
 </section>
+
+
 
 
  <!-- Scripts -->
@@ -282,15 +320,62 @@ function closeForm() {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
-<script>
-const images = document.querySelectorAll(".carousel-image");
-let current = 0;
 
-setInterval(() => {
-  images[current].classList.remove("active");
-  current = (current + 1) % images.length;
-  images[current].classList.add("active");
-}, 3000); // Cambia cada 3 segundos
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.getElementById('formulario-contacto').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const email = document.getElementById('email');
+  const mensaje = document.getElementById('mensaje');
+
+  // Validación manual
+  if (email.value.trim() === '' || mensaje.value.trim() === '') {
+    Swal.fire({
+      icon: 'warning',
+      title: 'Campos incompletos',
+      text: 'Por favor, completa todos los campos antes de enviar.',
+      confirmButtonColor: '#f39c12'
+    });
+    return;
+  }
+
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      Swal.fire({
+        icon: 'success',
+        title: '¡Mensaje enviado!',
+        text: 'Tu mensaje ha sido enviado correctamente. Te responderemos pronto.',
+        confirmButtonColor: '#4caf50'
+      });
+      form.reset();
+    } else {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Error al enviar el mensaje.');
+    }
+
+  } catch (error) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: error.message || 'No se pudo enviar el mensaje. Intenta más tarde.',
+      confirmButtonColor: '#d33'
+    });
+  }
+});
 
 </script>
 

@@ -72,6 +72,8 @@ body {
 }
 /* Ícono de la X para cerrar el menú */
 /* Ícono de la X para cerrar el menú */
+/* Ícono de la X para cerrar el menú */
+/* Ícono de la X para cerrar el menú */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -80,6 +82,50 @@ body {
     color: white;
     cursor: pointer;
     display: none; /* Oculto por defecto */
+
+
+}@media (max-width: 768px) {
+  .menu-icon {
+    display: flex; /* mostrar solo en móvil */
+  }
+
+  .navbar {
+    position: fixed !important;
+    top: 0;
+    right: 0 !important;       /* Cambiar a derecha */
+    left: auto !important;     /* Resetear left */
+    height: 100vh;
+    width: 70%;
+    max-width: 300px;
+    background-color: #111;
+    flex-direction: column;
+    padding-top: 60px;
+    padding-left: 0 !important; /* elimina padding izquierdo */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 20;
+    justify-content: flex-start;
+  }
+
+  .navbar.active {
+    transform: translateX(0); /* Cuando se abre, se mueve a posición normal */
+  }
+
+  .navbar a {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    margin-left: 0 !important;
+    color: white;
+    border-bottom: 1px solid #333;
+  }
+
+  .navbar::after {
+    display: none; /* ocultar línea blanca en móvil */
+  }
+
+  .close-btn {
+    display: block; /* mostrar botón cerrar en móvil */
+  }
 }
 
 
@@ -847,11 +893,181 @@ h2 {
   
 }
 
-
-
-
-
 /* Evita scroll horizontal indeseado */
 body, html {
   overflow-x: hidden;
+}
+.contacto-section {
+  padding: 40px 20px;
+  background: linear-gradient(120deg, #edf0f3, #f9fafb);
+  font-family: 'Poppins', sans-serif;
+}
+
+.contacto-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.contacto-info {
+  flex: 1 1 400px;
+  color: #2d3436;
+}
+
+.contacto-info h2 {
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.contacto-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.contacto-beneficios {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.contacto-beneficios li {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+}
+
+.contacto-beneficios li i {
+  color: #010102;
+  margin-right: 10px;
+}
+
+/* FORMULARIO TARJETA */
+.contacto-formulario {
+  flex: 1 1 500px;
+  max-width: 100%; /* ✅ evita desbordes */
+  margin: 0 auto;   /* ✅ centra horizontalmente */
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 40px 30px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+  box-sizing: border-box; /* ✅ incluye padding en el ancho */
+}
+
+.contacto-formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  max-width: 100%; /* ✅ límite absoluto */
+  padding: 14px 16px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  box-sizing: border-box; /* ✅ fundamental para evitar desbordes */
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4caf70;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(76, 175, 112, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Botón elegante */
+.cta-button {
+  background-color: #4caf70;
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #3d8e5c;
+  box-shadow: 0 6px 15px rgba(76, 175, 112, 0.3);
+}
+
+.cta-button i {
+  margin-right: 8px;
+}
+@media (max-width: 768px) {
+  .contacto-section {
+    padding: 40px 15px;
+     padding-top: 20px; /* menos espacio arriba */
+  }
+
+  .contacto-container {
+    flex-direction: column;
+    align-items: stretch; /* 👈 permite que el contenido use todo el ancho */
+    gap: 40px;
+  }
+
+  .contacto-info {
+    text-align: left; /* 👈 mejora la legibilidad en móvil */
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .contacto-beneficios {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 👈 íconos y texto alineados a la izquierda */
+    padding-left: 0;
+    margin-top: 20px;
+  }
+
+  .contacto-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    text-align: left;
+    width: 100%;
+    color: #4a4a4a;
+  }
+
+  .contacto-formulario {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+     margin-top: -30px; /* menos espacio arriba */
+  }
 }

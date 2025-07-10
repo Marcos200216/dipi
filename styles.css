@@ -181,18 +181,6 @@ padding: 10px 10px; /* Subirá más el texto */
   justify-content: center;
   min-height: 60vh;
 }
-@media (max-width: 768px) {
-  .hero {
-    text-align: left;
-    align-items: flex-start; /* Alinea los elementos del flex container a la izquierda */
-    padding-left: 20px; /* Ajusta el espacio desde el borde izquierdo */
-    
-  }
-  .hero h2 {
-  font-size: 34px !important;
-}
-
-}
 
 /* Asegurar que nav y menú están por encima también */
 .navbar, .menu-icon, .close-btn {

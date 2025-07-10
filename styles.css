@@ -1177,11 +1177,14 @@ textarea {
     padding: 0 10px;
   }
 
-  .footer-section p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-  }
+ .footer-section p {
+  white-space: nowrap; /* Evita que el texto se rompa a una nueva línea */
+  overflow-wrap: normal;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  align-items: center;
+}
 
   .footer-section {
     align-items: flex-start;

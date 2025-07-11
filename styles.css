@@ -509,22 +509,38 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-.cta-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #4caf70; /* verde suave y más apagado */
-  box-shadow: 0 4px 10px rgba(76, 175, 112, 0.3); /* sombra más sutil */
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
+.botones-wpp {
+  display: flex;
+  gap: 15px;
+ justify-content: center; /* centrados horizontalmente */
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.cta-button:hover {
-  background-color: #3a8a55; /* verde un poco más oscuro pero suave */
+.cta-button-mini {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #4caf70;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(76, 175, 112, 0.3);
+  font-size: 0.95rem;
+}
+
+.cta-button-mini i {
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.cta-button-mini:hover {
+  background-color: #3a8a55;
   box-shadow: 0 6px 15px rgba(58, 138, 85, 0.4);
 }
+
 
 @keyframes fadeInUp {
   from {
@@ -592,12 +608,22 @@ h2 {
     font-size: 1.1rem;
   }
 
-  .cta-button {
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    display: block;
+ /* Botones uno al lado del otro y centrados */
+  .botones-wpp {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+
+  .cta-button-mini {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    width: auto;
+    max-width: 150px;
+    text-align: center;
   }
 }
 
